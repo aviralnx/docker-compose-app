@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server-mongo
+spec:
+  volumes:
+    - name: configmap-volume
+      configMap:
+        name: mongo-configmap
+  containers:
+    - image: mongo
+      name: server-mongo
+      ports:
+        - containerPort: 80
+      env:
+      - name: SECRET_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: backend-user
+            key: backend-username
+      volumeMounts:
+        - name: configmap-volume
+            mountPath: /etc/config
