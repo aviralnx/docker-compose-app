@@ -12,6 +12,7 @@ spec:
       name: server-mongo
       ports:
         - containerPort: 80
+# kubectl create secret generic backend-user --from-literal=backend-username='backend-admin'
       env:
       - name: SECRET_USERNAME
         valueFrom:

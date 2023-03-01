@@ -19,3 +19,6 @@ spec:
         image: mongo
         ports:
         - containerPort: 80
+
+# created Nodeport service with 
+# kubectl expose deployment mongo-deployment --type=NodePort --name=nodeport-service

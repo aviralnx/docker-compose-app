@@ -6,3 +6,5 @@ data:
   keys: | 
     db.string=mongodb://localhost:27017 
     db.user=admin
+
+# kubectl apply -f config-map.yaml
